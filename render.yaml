@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: cricketconnect-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        value: https://cricketconnect.vercel.app
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
